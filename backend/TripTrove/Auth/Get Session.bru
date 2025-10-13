@@ -1,0 +1,15 @@
+meta {
+  name: Get Session
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{localURL}}/api/auth/get-session
+  body: json
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}
