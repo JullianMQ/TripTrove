@@ -1,0 +1,15 @@
+meta {
+  name: Get All Posts
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{localURL}}/api/posts
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}
