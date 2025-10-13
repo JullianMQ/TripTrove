@@ -11,9 +11,7 @@ const client = new MongoClient(uri, {
   },
 });
 
-// TODO: for testing only
-const db = client.db("sample_mflix");
-// TODO: for testing only
+const db = client.db("TripTrove");
 
 async function run() {
   try {

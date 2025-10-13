@@ -1,0 +1,21 @@
+meta {
+  name: Update User Name
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{localURL}}/api/auth/update-user
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "test user"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
