@@ -4,6 +4,9 @@ import { auth } from './utils/auth.js'
 import { db } from './db.js'
 import { getAllComments } from './handlers/CommentHandler.js'
 import { getAllFeedbacks } from './handlers/FeedbackHandler.js'
+import { createFeedback } from './handlers/FeedbackHandler.js'
+import { updateFeedback } from './handlers/FeedbackHandler.js'
+import { deleteFeedback } from './handlers/FeedbackHandler.js'
 import { getAllPosts } from './handlers/PostHandler.js'
 
 const app = express()
@@ -28,8 +31,15 @@ router.get('/feedbacks', async (req, res) => {
   await getAllFeedbacks(req, res)
 })
 //=============================Feedbacks========================================
-
-
+router.post('/feedbacks', async (req, res, next) => {
+  await createFeedbac(req, res, next);
+})
+router.put('/feedbacks', async (req, res, next) => {
+  await updateFeedbac(req, res, next);
+})
+router.delete('/feedbacks', async (req, res, next) => {
+  await deleteFeedbac(req, res, next);
+})
 //=============================Posts========================================
 router.get('/posts', async (req, res) => {
   await getAllPosts(req, res)
